@@ -10,10 +10,9 @@ function getStatistics(): number {
     readFileSync('./persons.json').toString()
   );
 
-  const totalAge = persons.reduce((sum, person) => sum + person.age, 0);
-  const averageAge = totalAge / persons.length;
+  const maxAge = Math.max(...persons.map((person) => person.age));
 
-  return averageAge;
+  return maxAge;
 }
 
 function displayResult() {
