@@ -2,12 +2,12 @@ import { readFileSync } from 'fs';
 
 interface Person {
   age: number;
-  height: number;
+  taille: number;
 }
 
 interface Statistics {
   meanAge: number;
-  meanHeight: number;
+  meanTaille: number;
 }
 
 function getStatistics(): Statistics {
@@ -16,12 +16,12 @@ function getStatistics(): Statistics {
   );
 
   const totalAge = persons.reduce((sum, person) => sum + person.age, 0);
-  const totalHeight = persons.reduce((sum, person) => sum + person.height, 0);
+  const totalTaille = persons.reduce((sum, person) => sum + person.taille, 0);
 
   const meanAge = totalAge / persons.length;
-  const meanHeight = totalHeight / persons.length;
+  const meanTaille = totalTaille / persons.length;
 
-  return { meanAge, meanHeight };
+  return { meanAge, meanTaille };
 }
 
 function displayResult() {
